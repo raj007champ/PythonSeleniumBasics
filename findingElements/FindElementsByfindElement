@@ -1,0 +1,35 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import os
+
+class findingElementsbyfindElement():
+
+    def findElementsbyFindElement(self):
+        driverLocation = 'D:\Shishu Raj Pandey\Software\Browser Drivers\chromedriver\chromedriver.exe'
+        os.environ['webdriver.chrome.driver'] = driverLocation
+        driver=webdriver.Chrome(driverLocation)
+
+        driver.get('https://learn.letskodeit.com/p/practice')
+
+        a=driver.find_element(By.XPATH,'//*[@id="product"]/tbody/tr[2]/td[2]')
+        b=driver.find_element(By.ID,'openwindow')
+        c=driver.find_element(By.CLASS_NAME,'class1')
+        d=driver.find_element(By.CSS_SELECTOR,'#openwindow')
+        e=driver.find_element(By.TAG_NAME,'button')
+        f=driver.find_element(By.NAME,'courses')
+
+        if a is not None:
+            print('By Xpath')
+        if b is not None:
+            print('By Id')
+        if c is not None:
+            print('By Class Name')
+        if d is not None:
+            print('By  CSS Selector')
+        if e is not None:
+            print('By Tag name')
+        if f is not None:
+            print('By Name')
+
+fe=findingElementsbyfindElement()
+fe.findElementsbyFindElement()
